@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CodeQuotes.MainPage">
-    <Grid BackgroundColor="Navy">
+    <Grid x:Name="background">
         <Grid.Background>
             <LinearGradientBrush EndPoint="1,1">
                 <GradientStopCollection>
                     <GradientStop Offset="0" Color="DarkBlue"/>
+                    <GradientStop Offset=".25" Color="LightGreen"/>
                     <GradientStop Offset=".5" Color="LightBlue"/>
-                    <GradientStop Offset="1" Color="Fuchsia"/>
+                    <GradientStop Offset=".75" Color="Blue"/>
+                    <GradientStop Offset="1" Color="DarkGreen"/>
                 </GradientStopCollection>
             </LinearGradientBrush>
         </Grid.Background>
@@ -19,10 +21,12 @@
                    Text="They don't make bugs like Bunny anymore. - Olav Mjelde"
                    TextColor="White"
                    VerticalOptions="Center" />
-            <Button Grid.Row="1"
+            <Button x:Name="btnGenerateQuote"
+                    Grid.Row="1"
                     BackgroundColor="Black"
                     Opacity=".4"
-                    Text="Get New Quote" />
+                    Text="Get New Quote"
+                    Clicked="btnGenerateQuote_Clicked"/>
         </Grid>
     </Grid>
 </ContentPage>
